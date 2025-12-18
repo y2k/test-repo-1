@@ -1,0 +1,14 @@
+name: Docker Image CI
+
+on:
+  repository_dispatch:
+    types: [image_updated]
+
+jobs:
+  build:
+    environment: CI
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: echo "ACTION CALLED"
+    - run: env
