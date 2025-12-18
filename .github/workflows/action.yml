@@ -13,5 +13,5 @@ jobs:
     - run: echo "ACTION CALLED"
     - run: env
     - run: echo ${{ github.event.client_payload.tag }}
-    - run: echo ${{ github.event.client_payload }}
-    - run: echo ${{ github.event }}
+    - run: echo ${{ toJson(github.event.client_payload) }}
+    - run: echo ${{ toJson(github.event) }}
